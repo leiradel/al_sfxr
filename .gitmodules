@@ -1,0 +1,9 @@
+[submodule "ui/tinyfiledialogs"]
+	path = ui/tinyfiledialogs
+	url = https://git.code.sf.net/p/tinyfiledialogs/code
+[submodule "ui/dr_libs"]
+	path = ui/dr_libs
+	url = https://github.com/mackron/dr_libs.git
+[submodule "ui/stb"]
+	path = ui/stb
+	url = https://github.com/nothings/stb.git
