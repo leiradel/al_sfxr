@@ -1,12 +1,3 @@
-#define AL_SFXR_GENERATE
-#define AL_SFXR_LOAD
-#define AL_SFXR_SAVE
-#define AL_SFXR_INT16_MONO
-#define AL_SFXR_FLOAT_MONO
-#define AL_SFXR_INT16_STEREO
-#define AL_SFXR_FLOAT_STEREO
-#define AL_SFXR_IMPLEMENTATION
-
 /*
 # al_sfxr
 
