@@ -22,7 +22,7 @@ To configure **as_sfxr**, define one or more of these macros before including
 this file:
 
 * `AL_SFXR_GENERATE`: this macro enables `al_sfxr_generate`, which randomly
-  generates a SFXR from a preset and a seed.
+  generates a SFXR from a preset, a mutation count, and a seed.
 * `AL_SFXR_LOAD`: define this macro to enable `al_sfxr_load`, used to load a
   SFXR file from an user-supplied reader function.
 * `AL_SFXR_SAVE`: enables `al_sfxr_save` that writes the SFXR to an
@@ -35,13 +35,15 @@ this file:
     * `al_sfxr_produce1f`: 44100 Hz, 32-bit float mono
     * `al_sfxr_produce2f`: 44100 Hz, 32-bit float stereo
 
-## Sample code
+The API is fully documented in the `al_sfxr.h` file.
+
+## TL;DR
 
 ```cpp
-// Create a SFXR sound using the `AL_SFXR_LASER` preset and 17 as the
-// pseudo-random number generator seed
+// Create a SFXR sound using the `AL_SFXR_LASER` preset, zero mutations, and 17
+// as the pseudo-random number generator seed
 al_sfxr_Params params;
-al_sfxr_generate(&params, AL_SFXR_LASER, 17);
+al_sfxr_generate(&params, AL_SFXR_LASER, 0, 17);
 
 // Save it
 FILE* const fp = fopen("sfxr.bin", "wb");
