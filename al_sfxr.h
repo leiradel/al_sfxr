@@ -892,7 +892,7 @@ void al_sfxr_generate(al_sfxr_Params* const params, al_sfxr_Preset const preset,
 
     al_sfxr_clamp(params);
 
-    for (int i = 0; i < mutations; i++) {
+    for (unsigned i = 0; i < mutations; i++) {
         al_sfxr_mutate(&params->p_base_freq, &prng);
         al_sfxr_mutate(&params->p_freq_ramp, &prng);
         al_sfxr_mutate(&params->p_freq_dramp, &prng);

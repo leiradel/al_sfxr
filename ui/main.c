@@ -487,7 +487,7 @@ void draw_screen(void)
 
     static size_t const max_categories = sizeof(s_categories) / sizeof(s_categories[0]);
 
-    for (int i = 0; i < max_categories; i++) {
+    for (size_t i = 0; i < max_categories; i++) {
         if (button(5, 30 + i * 30, 0, s_categories[i].name, 300 + i)) {
             s_curparams.generate = 1;
             s_curparams.preset = s_categories[i].preset;
@@ -808,6 +808,9 @@ static void uninit_sdl(void) {
 }
 
 int main(int const argc, char const* argv[]) {
+    (void)argc;
+    (void)argv;
+
     s_curparams.generate = 1;
     s_curparams.preset = AL_SFXR_POWERUP;
     s_curparams.mutations = 0;

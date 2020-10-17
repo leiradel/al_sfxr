@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -std=c99 -O0 -g -Wall -Wpedantic `sdl2-config --cflags`
+CFLAGS = -std=c99 -O0 -g -Wall -Wextra -Wpedantic `sdl2-config --cflags`
 INCLUDES = -I.. -Itinyfiledialogs -Idr_libs -Istb
 LIBS = `sdl2-config --libs` -lm
 
