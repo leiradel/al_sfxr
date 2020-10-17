@@ -6,6 +6,9 @@ ui/ld48.h
 ui/sfxr
 ui/sfxr.exe
 
+miniaudio/play
+miniaudio/play.exe
+
 .vscode/
 
 # Created by https://www.toptal.com/developers/gitignore/api/c
