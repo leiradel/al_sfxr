@@ -7,3 +7,6 @@
 [submodule "ui/stb"]
 	path = ui/stb
 	url = https://github.com/nothings/stb.git
+[submodule "miniaudio/miniaudio"]
+	path = miniaudio/miniaudio
+	url = https://github.com/mackron/miniaudio.git
