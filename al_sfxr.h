@@ -478,7 +478,7 @@ static void al_sfxr_zero(al_sfxr_Params* const params) {
     params->p_arp_speed = 0.0f;
     params->p_arp_mod = 0.0f;
 
-	params->sound_vol = 0.5f;
+    params->sound_vol = 0.5f;
 }
 #endif /* defined(AL_SFXR_LOAD) || defined(AL_SFXR_GENERATE) */
 
@@ -523,7 +523,7 @@ int al_sfxr_load(al_sfxr_Params* const params, al_sfxr_Read8 const reader, void*
     int version;
     int ok = al_sfxr_readi(reader, userdata, &version);
 
-	if (version != 100 && version != 101 && version != 102) {
+    if (version != 100 && version != 101 && version != 102) {
         return -1;
     }
 
