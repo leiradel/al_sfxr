@@ -484,7 +484,7 @@ static void al_sfxr_zero(al_sfxr_Params* const params) {
 
 #if defined(AL_SFXR_LOAD)
 static int al_sfxr_read16(al_sfxr_Read8 const reader, void* const userdata, uint16_t* const word) {
-    uint8_t l, h;
+    uint8_t l = 0, h = 0;
 
     int ok = reader(userdata, &l);
     ok = ok || reader(userdata, &h);
@@ -494,7 +494,7 @@ static int al_sfxr_read16(al_sfxr_Read8 const reader, void* const userdata, uint
 }
 
 static int al_sfxr_read32(al_sfxr_Read8 const reader, void* const userdata, uint32_t* const dword) {
-    uint16_t l, h;
+    uint16_t l = 0, h = 0;
 
     int ok = al_sfxr_read16(reader, userdata, &l);
     ok = ok || al_sfxr_read16(reader, userdata, &h);
@@ -504,7 +504,7 @@ static int al_sfxr_read32(al_sfxr_Read8 const reader, void* const userdata, uint
 }
 
 static int al_sfxr_readf(al_sfxr_Read8 const reader, void* const userdata, float* const fp) {
-    uint32_t dword;
+    uint32_t dword = 0;
 
     int ok = al_sfxr_read32(reader, userdata, &dword);
 
@@ -513,14 +513,14 @@ static int al_sfxr_readf(al_sfxr_Read8 const reader, void* const userdata, float
 }
 
 static int al_sfxr_readi(al_sfxr_Read8 const reader, void* const userdata, int* const i) {
-    uint32_t temp;
+    uint32_t temp = 0;
     int ok = al_sfxr_read32(reader, userdata, &temp);
     *i = (int)temp;
     return ok;
 }
 
 int al_sfxr_load(al_sfxr_Params* const params, al_sfxr_Read8 const reader, void* const userdata) {
-    int version;
+    int version = 0;
     int ok = al_sfxr_readi(reader, userdata, &version);
 
     if (version != 100 && version != 101 && version != 102) {
@@ -529,7 +529,7 @@ int al_sfxr_load(al_sfxr_Params* const params, al_sfxr_Read8 const reader, void*
 
     al_sfxr_zero(params);
 
-    int wave_type;
+    int wave_type = AL_SFXR_SQUARE;
     ok = ok || al_sfxr_readi(reader, userdata, &wave_type);
     params->wave_type = (al_sfxr_Wave)wave_type;
 
@@ -558,7 +558,7 @@ int al_sfxr_load(al_sfxr_Params* const params, al_sfxr_Read8 const reader, void*
     ok = ok || al_sfxr_readf(reader, userdata, &params->p_env_decay);
     ok = ok || al_sfxr_readf(reader, userdata, &params->p_env_punch);
 
-    uint8_t filter_on; /* unused */
+    uint8_t filter_on = 0; /* unused */
     ok = ok || reader(userdata, &filter_on);
 
     ok = ok || al_sfxr_readf(reader, userdata, &params->p_lpf_resonance);
